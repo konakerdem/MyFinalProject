@@ -7,14 +7,23 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    //önce ınterface olıuşturulur. sonra ınterface implement eden class olusturulur.
-    public interface IProductDal
+    
+    public interface IProductDal:IEntityRepository<Product>
     {
-        //interface metotları default olarak publictir. Bu yüzden access modifier yazmaya gerek yoktur.
-        List<Product> GetAll();
-        void Add(Product product);
-        void Update(Product product);
-        void Delete(Product product);
+
 
     }
 }
+
+//önce ınterface olıuşturulur. sonra ınterface implement eden class olusturulur.
+#region Generic Öncesi
+/*
+//interface metotları default olarak publictir. Bu yüzden access modifier yazmaya gerek yoktur.
+List<Product> GetAll();
+void Add(Product product);
+void Update(Product product);
+void Delete(Product product);
+List<Product> GetAllByCategory(int categoryId);
+
+*/
+#endregion
